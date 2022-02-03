@@ -1,0 +1,19 @@
+{
+  "name": "mongotest",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon --watch src src/server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.2",
+    "mongoose": "^6.2.0",
+    "routers": "^0.1.4"
+  },
+  "devDependencies": {},
+  "keywords": [],
+  "description": ""
+}
