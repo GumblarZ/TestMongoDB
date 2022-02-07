@@ -1,5 +1,5 @@
-const {response} = require("express");
-const { async } = require("regenerator-runtime");
+//const {response} = require("express");
+//const { async } = require("regenerator-runtime");
 const {v4: uuid} = require("uuid");
 const Charactere = require("../models/characters");
 
@@ -19,6 +19,7 @@ module.exports = {
             _id: uuid(),
             name: req.body.name,
             vision: req.body.vision,
+            weaponType: req.body.weaponType,
             stars: req.body.stars
         })
 

@@ -13,8 +13,12 @@ const charactereShema = new mongoose.Schema({
         type:String,
         require: true
     },
-    stars: {
+    weaponType:{
         type:String,
+        require: true
+    },
+    stars: {
+        type:Number,
         require: true
     }
 });
