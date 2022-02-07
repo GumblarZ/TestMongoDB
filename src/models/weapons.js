@@ -9,6 +9,10 @@ const weaponShema = new mongoose.Schema({
         type:String,
         require: true
     },
+    type:{
+        type:String,
+        require: true
+    },
     rarity:{
         type:Number,
         require: true
