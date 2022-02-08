@@ -1,4 +1,6 @@
 const {response} = require("express");
+const { update } = require("lodash");
+const { message } = require("statuses");
 const {v4: uuid} = require("uuid");
 const Video = require("../models/video");
 
@@ -30,5 +32,25 @@ module.exports = {
         }catch(err){
             response.status(400).json({ error: err.message});
         }
+    },
+    async update(request, response){
+        const {title, link} = request.body;
+
+        if(!title && !link){
+            return response.status(400).json({ error:"You must inform a new title or a link"});
+        }
+
+        if(title) request.video.title = title;
+        if(link) request.video.link = link;
+
+        try {
+            await response.video.save();
+            return response.status(200).json({message:"Video updated successfully!"});
+        } catch (err) {
+            response.status(500).json({error: err.message});
+        }
+
+        
     }
+    
 }
