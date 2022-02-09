@@ -1,25 +1,23 @@
-const {validade: isUuid} = require("uuid");
-const video = require("../models/video");
-const { validate } = require("../models/video");
+const {validate: isUuid} = require("uuid");
 const Video = require("../models/video");
 
 module.exports ={
-    async validateId(request, response, next){
-        console.log("ativado")
-        const {id} = request.params;
-
-        if(!isUuid(id)){
-            return response.status(400).json({error : "Invalid ID."});
+    async getVideo(req, res, next) {
+        const { id } = req.params;
+    
+        if (!isUuid(id)) {
+          return res.status(400).json({ error: "Invalid ID" });
         }
+    
         try {
-            const video = await Video.findById(id);
-            response.video = video;
-            if(!video){
-                return response.status(404).json({ error: "Video not found."});
-            }
-        } catch (error) {
-            return response.status(500).json({ error : error.message});
+          const video = await Video.findById(id);
+          res.video = video;
+          if (!video) {
+            return res.status(404).json({ error: "Video not found" });
+          }
+        } catch (err) {
+          return res.status(500).json({ error: err.message });
         }
         next();
-    }
+      }
 }
