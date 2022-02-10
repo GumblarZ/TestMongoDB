@@ -1,0 +1,24 @@
+"mongodb+srv://gumblarz:$darklaw24@cluster0.5wbt1.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
+
+"mongodb+srv://gumblarz:$darklaw24@cluster0.5wbt1.mongodb.net/Genshin?retryWrites=true&w=majority"
+
+
+
+{
+	"name": "Gorou",
+	"vision": "Geo",
+	"weaponType": "bow",
+	"stars": 4
+}
+{
+	"title":"gg",
+	"link":"pizza"
+}
+
+examples
+{
+	"name": "Zhongli",
+	"vision": "Geo",
+	"weaponType": "Polearm",
+	"stars": 5
+}

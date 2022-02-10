@@ -29,5 +29,30 @@ module.exports = {
         }catch(err){
             res.status(500).json({error: err.message});
         }
+    },
+    async update(req,res){
+        const {name,vision,weaponType,stars} = req.body;
+        if(name&&!vision&&!weaponType&&!stars) return res.status(400).json({error:"You must inform a new tittle or a link"});
+
+        if(name) res.charactere.name = name;
+        if(vision) res.charactere.vision = vision;
+        if(weaponType) res.charactere.weaponType = weaponType;
+        if(stars) res.charactere.stars = stars;
+
+        try {
+            await res.Charactere.save();
+            return res.status(200).json({message:"Updated successfully"});
+        } catch (err) {
+            res.status(500).json({error:err.message});
+        }
+    },
+    async delete(req,res){
+        try {
+            await res.charactere.remove();
+            return res.status(200).json({message:"Charactere deleted successfully"});
+        } catch (err) {
+            return res.status(500).json({error:err.message});
+            
+        }
     }
 }
