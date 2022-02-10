@@ -32,7 +32,7 @@ module.exports = {
     },
     async update(req,res){
         const {name,vision,weaponType,stars} = req.body;
-        if(name&&!vision&&!weaponType&&!stars) return res.status(400).json({error:"You must inform a new tittle or a link"});
+        if(!name&&!vision&&!weaponType&&!stars) return res.status(400).json({error:"You must inform a new tittle or a link"});
 
         if(name) res.charactere.name = name;
         if(vision) res.charactere.vision = vision;
@@ -40,7 +40,7 @@ module.exports = {
         if(stars) res.charactere.stars = stars;
 
         try {
-            await res.Charactere.save();
+            await res.charactere.save();
             return res.status(200).json({message:"Updated successfully"});
         } catch (err) {
             res.status(500).json({error:err.message});
