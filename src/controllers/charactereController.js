@@ -51,8 +51,7 @@ module.exports = {
             await res.charactere.remove();
             return res.status(200).json({message:"Charactere deleted successfully"});
         } catch (err) {
-            return res.status(500).json({error:err.message});
-            
+            return res.status(500).json({error:err.message});  
         }
     }
 }

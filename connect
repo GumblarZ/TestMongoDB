@@ -22,3 +22,14 @@ examples
 	"weaponType": "Polearm",
 	"stars": 5
 }
+
+{
+	"name":"",
+	"type":"",
+	"rarity":"",
+	"stat":{
+		"statType":"",
+		"statValue":""
+	},
+	"passive":""
+}
